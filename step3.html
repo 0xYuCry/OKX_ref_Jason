@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程完成</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding-top: 25vh; /* 将内容推到页面的1/4处 */
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #4cae4c;
+        }
+
+        .bold-large {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 30%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .no-highlight {
+            color: #a7a2a2;
+        }
+
+        .copy-container {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            text-decoration: underline;
+        }
+
+        .copy-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* 在元素上方显示 */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        .copy-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Step 2: 注册完成！（UID 微信发我喔）</h1>
+        <p>感谢您的注册，您的返佣将会每两周结算，明细公布在朋友圈里。</p>
+        <!-- <p>小号微信：<span class="copy-container" onclick="copyToClipboard('BN_ref_40')">BN_ref_40<img src="copy-icon.png" alt="Copy" class="copy-icon"><span class="tooltip">点击复制</span></span></p> -->
+        <div class="image-container">
+            <img src="wechat.jpg" alt="微信二维码">
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('微信号已复制：' + text);
+            }, function(err) {
+                console.error('无法复制文本：', err);
+            });
+        }
+    </script>
+</body>
+</html>
